@@ -126,7 +126,7 @@ namespace Git
         return remotes;
     }
     
-    std::optional< Branch > Repository::head( void ) const
+    Utility::Optional< Branch > Repository::head( void ) const
     {
         for( const auto & b: this->branches() )
         {

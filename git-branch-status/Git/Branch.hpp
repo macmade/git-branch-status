@@ -33,9 +33,9 @@
 #include <string>
 #include <memory>
 #include <algorithm>
-#include <optional>
 #include <git2.h>
 #include "Commit.hpp"
+#include "Optional.hpp"
 
 namespace Git
 {
@@ -59,11 +59,11 @@ namespace Git
             bool operator >( const Branch & o ) const;
             bool operator <( const Branch & o ) const;
             
-            std::string             name( void )                 const;
-            bool                    isHead( void )               const;
-            bool                    isAhead( const Branch & o )  const;
-            bool                    isBehind( const Branch & o ) const;
-            std::optional< Commit > lastCommit( void )           const;
+            std::string                 name( void )                 const;
+            bool                        isHead( void )               const;
+            bool                        isAhead( const Branch & o )  const;
+            bool                        isBehind( const Branch & o ) const;
+            Utility::Optional< Commit > lastCommit( void )           const;
             
             friend void swap( Branch & o1, Branch & o2 );
             

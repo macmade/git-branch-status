@@ -130,7 +130,7 @@ namespace Git
         return behind > 0;
     }
     
-    std::optional< Commit > Branch::lastCommit( void ) const
+    Utility::Optional< Commit > Branch::lastCommit( void ) const
     {
         const git_oid * oid( nullptr );
         

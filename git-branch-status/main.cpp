@@ -70,8 +70,8 @@ int main( int argc, char * argv[] )
             {
                 try
                 {
-                    Git::Repository              repos( ( args.path().length() > 0 ) ? args.path() : "." );
-                    std::optional< Git::Branch > head( repos.head() );
+                    Git::Repository                  repos( ( args.path().length() > 0 ) ? args.path() : "." );
+                    Utility::Optional< Git::Branch > head( repos.head() );
                     int                          y( 0 );
                     
                     if( args.fetchOrigin() )
@@ -85,7 +85,7 @@ int main( int argc, char * argv[] )
                         }
                     }
                     
-                    if( head.has_value() == false )
+                    if( head.hasValue() == false )
                     {
                         throw std::runtime_error( "Cannot get head" );
                     }
@@ -169,7 +169,7 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
             symbol = "<";
             attr   = COLOR_PAIR( 4 );
         }
-        else if( branch.lastCommit().has_value() && repos.head()->lastCommit().has_value() && branch.lastCommit()->hash() == repos.head()->lastCommit()->hash() )
+        else if( branch.lastCommit().hasValue() && repos.head()->lastCommit().hasValue() && branch.lastCommit()->hash() == repos.head()->lastCommit()->hash() )
         {
             symbol = "=";
             attr   = COLOR_PAIR( 2 );
@@ -215,16 +215,16 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
                 longestBranch = b.name().size();
             }
             
-            if( b.lastCommit().has_value() )
+            if( b.lastCommit().hasValue() )
             {
                 {
                     std::string author;
                     
-                    if( b.lastCommit()->author().has_value() )
+                    if( b.lastCommit()->author().hasValue() )
                     {
                         author = b.lastCommit()->author()->name();
                     }
-                    else if( b.lastCommit()->committer().has_value() )
+                    else if( b.lastCommit()->committer().hasValue() )
                     {
                         author = b.lastCommit()->committer()->name();
                     }
@@ -239,7 +239,7 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
         
         longestBranch += 4;
         
-        if( branch.lastCommit().has_value() )
+        if( branch.lastCommit().hasValue() )
         {
             info.push_back( { branch.lastCommit()->hash(), COLOR_PAIR( 6 ) } );
             
@@ -267,11 +267,11 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
                 
                 ss << std::setw( static_cast< int >( longestAuthor ) );
                 
-                if( branch.lastCommit()->author().has_value() )
+                if( branch.lastCommit()->author().hasValue() )
                 {
                     ss << branch.lastCommit()->author()->name();
                 }
-                else if( branch.lastCommit()->committer().has_value() )
+                else if( branch.lastCommit()->committer().hasValue() )
                 {
                     ss << branch.lastCommit()->committer()->name();
                 }

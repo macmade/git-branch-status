@@ -45,6 +45,7 @@
 		05925A08217883DF00E5BB7F /* Repository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Repository.hpp; sourceTree = "<group>"; };
 		05925A0A217883E800E5BB7F /* Branch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Branch.cpp; sourceTree = "<group>"; };
 		05925A0B217883E800E5BB7F /* Branch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Branch.hpp; sourceTree = "<group>"; };
+		059EEDDC217E835B00067628 /* Optional.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Optional.hpp; sourceTree = "<group>"; };
 		05DD605B217AA1AC006A0581 /* Arguments.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Arguments.cpp; sourceTree = "<group>"; };
 		05DD605C217AA1AC006A0581 /* Arguments.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Arguments.hpp; sourceTree = "<group>"; };
 		05DD605E217AA56A006A0581 /* Remote.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Remote.cpp; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 				05DD605C217AA1AC006A0581 /* Arguments.hpp */,
 				05DD6064217ABA4F006A0581 /* Credentials.cpp */,
 				05DD6065217ABA4F006A0581 /* Credentials.hpp */,
+				059EEDDC217E835B00067628 /* Optional.hpp */,
 			);
 			path = Utility;
 			sourceTree = "<group>";

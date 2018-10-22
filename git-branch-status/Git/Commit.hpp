@@ -33,9 +33,9 @@
 #include <string>
 #include <memory>
 #include <algorithm>
-#include <optional>
 #include <git2.h>
 #include "Signature.hpp"
+#include "Optional.hpp"
 
 namespace Git
 {
@@ -57,13 +57,13 @@ namespace Git
             bool operator ==( const Commit & o ) const;
             bool operator !=( const Commit & o ) const;
             
-            std::string                hash( void )      const;
-            std::string                body( void )      const;
-            std::string                message( void )   const;
-            std::string                summary( void )   const;
-            time_t                     time( void )      const;
-            std::optional< Signature > author( void )    const;
-            std::optional< Signature > committer( void ) const;
+            std::string                    hash( void )      const;
+            std::string                    body( void )      const;
+            std::string                    message( void )   const;
+            std::string                    summary( void )   const;
+            time_t                         time( void )      const;
+            Utility::Optional< Signature > author( void )    const;
+            Utility::Optional< Signature > committer( void ) const;
             
             friend void swap( Commit & o1, Commit & o2 );
             

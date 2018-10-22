@@ -34,10 +34,10 @@
 #include <memory>
 #include <algorithm>
 #include <vector>
-#include <optional>
 #include <git2.h>
 #include "Branch.hpp"
 #include "Remote.hpp"
+#include "Optional.hpp"
 
 namespace Git
 {
@@ -56,10 +56,10 @@ namespace Git
             bool operator ==( const Repository & o ) const;
             bool operator !=( const Repository & o ) const;
             
-            std::string             path( void )     const;
-            std::vector< Branch >   branches( void ) const;
-            std::vector< Remote >   remotes( void )  const;
-            std::optional< Branch > head( void )     const;
+            std::string                 path( void )     const;
+            std::vector< Branch >       branches( void ) const;
+            std::vector< Remote >       remotes( void )  const;
+            Utility::Optional< Branch > head( void )     const;
             
             friend void swap( Repository & o1, Repository & o2 );
             

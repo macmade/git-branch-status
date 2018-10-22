@@ -122,7 +122,7 @@ namespace Git
         return git_commit_time( this->impl->_commit );
     }
     
-    std::optional< Signature > Commit::author( void ) const
+    Utility::Optional< Signature > Commit::author( void ) const
     {
         const git_signature * s( git_commit_author( this->impl->_commit ) );
         
@@ -134,7 +134,7 @@ namespace Git
         return {};
     }
     
-    std::optional< Signature > Commit::committer( void ) const
+    Utility::Optional< Signature > Commit::committer( void ) const
     {
         const git_signature * s( git_commit_committer( this->impl->_commit ) );
         
