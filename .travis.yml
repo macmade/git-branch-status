@@ -1,3 +1,5 @@
 language: objective-c
 xcode_project: git-branch-status.xcodeproj
 xcode_scheme: git-branch-status
+script:
+    - xcodebuild build -project git-branch-status.xcodeproj -scheme git-branch-status
