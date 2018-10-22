@@ -18,6 +18,7 @@
 		05E218BF21790ADD007A7C9F /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E218BD21790ADD007A7C9F /* Screen.cpp */; };
 		05E218C121790C86007A7C9F /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E218C021790C86007A7C9F /* libncurses.tbd */; };
 		05E218C421791A42007A7C9F /* Commit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E218C221791A42007A7C9F /* Commit.cpp */; };
+		05E33407217E57010088973D /* Signature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E33405217E57010088973D /* Signature.cpp */; };
 		05F0E3C821787E7200D4E9AC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F0E3C721787E7200D4E9AC /* libc++.tbd */; };
 		05F0E3CA21787E8C00D4E9AC /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F0E3C921787E8C00D4E9AC /* CoreFoundation.framework */; };
 		05F0E3CC21787E9C00D4E9AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F0E3CB21787E9C00D4E9AC /* Security.framework */; };
@@ -55,6 +56,8 @@
 		05E218C021790C86007A7C9F /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
 		05E218C221791A42007A7C9F /* Commit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Commit.cpp; sourceTree = "<group>"; };
 		05E218C321791A42007A7C9F /* Commit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Commit.hpp; sourceTree = "<group>"; };
+		05E33405217E57010088973D /* Signature.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Signature.cpp; sourceTree = "<group>"; };
+		05E33406217E57010088973D /* Signature.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Signature.hpp; sourceTree = "<group>"; };
 		05F0E3C721787E7200D4E9AC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		05F0E3C921787E8C00D4E9AC /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		05F0E3CB21787E9C00D4E9AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,8 @@
 				05DD605F217AA56A006A0581 /* Remote.hpp */,
 				05925A07217883DF00E5BB7F /* Repository.cpp */,
 				05925A08217883DF00E5BB7F /* Repository.hpp */,
+				05E33405217E57010088973D /* Signature.cpp */,
+				05E33406217E57010088973D /* Signature.hpp */,
 			);
 			path = Git;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05253CF5217879E600F6ADE0 /* main.cpp in Sources */,
+				05E33407217E57010088973D /* Signature.cpp in Sources */,
 				05925A0C217883E800E5BB7F /* Branch.cpp in Sources */,
 				05925A09217883DF00E5BB7F /* Repository.cpp in Sources */,
 				05DD6060217AA56A006A0581 /* Remote.cpp in Sources */,

@@ -122,6 +122,30 @@ namespace Git
         return git_commit_time( this->impl->_commit );
     }
     
+    std::optional< Signature > Commit::author( void ) const
+    {
+        const git_signature * s( git_commit_author( this->impl->_commit ) );
+        
+        if( s != nullptr )
+        {
+            return Signature( s, *( this ) );
+        }
+        
+        return {};
+    }
+    
+    std::optional< Signature > Commit::committer( void ) const
+    {
+        const git_signature * s( git_commit_committer( this->impl->_commit ) );
+        
+        if( s != nullptr )
+        {
+            return Signature( s, *( this ) );
+        }
+        
+        return {};
+    }
+    
     void swap( Commit & o1, Commit & o2 )
     {
         using std::swap;

@@ -23,49 +23,42 @@
  ******************************************************************************/
 
 /*!
- * @header      Commit.hpp
+ * @header      Signature.hpp
  * @copyright   (c) 2018, Jean-David Gadina - www.xs-labs.com
  */
 
-#ifndef GIT_COMMIT_HPP
-#define GIT_COMMIT_HPP
+#ifndef GIT_SIGNATURE_HPP
+#define GIT_SIGNATURE_HPP
 
 #include <string>
 #include <memory>
+#include <vector>
 #include <algorithm>
-#include <optional>
 #include <git2.h>
-#include "Signature.hpp"
 
 namespace Git
 {
-    class Repository;
+    class Commit;
     
-    class Commit
+    class Signature
     {
         public:
             
-            Commit( const git_oid * oid, const Repository & repos );
-            Commit( const Commit & o );
-            ~Commit( void );
+            Signature( const git_signature * signature, const Commit & commit );
+            Signature( const Signature & o );
+            ~Signature( void );
             
-            Commit & operator =( Commit o );
+            Signature & operator =( Signature o );
             
-            operator git_commit    * () const;
-            operator const git_oid * () const;
+            operator const git_signature * () const;
             
-            bool operator ==( const Commit & o ) const;
-            bool operator !=( const Commit & o ) const;
+            bool operator ==( const Signature & o ) const;
+            bool operator !=( const Signature & o ) const;
             
-            std::string                hash( void )      const;
-            std::string                body( void )      const;
-            std::string                message( void )   const;
-            std::string                summary( void )   const;
-            time_t                     time( void )      const;
-            std::optional< Signature > author( void )    const;
-            std::optional< Signature > committer( void ) const;
+            std::string name( void )  const;
+            std::string email( void ) const;
             
-            friend void swap( Commit & o1, Commit & o2 );
+            friend void swap( Signature & o1, Signature & o2 );
             
         private:
             
@@ -75,4 +68,4 @@ namespace Git
     };
 }
 
-#endif /* GIT_COMMIT_HPP */
+#endif /* GIT_SIGNATURE_HPP */

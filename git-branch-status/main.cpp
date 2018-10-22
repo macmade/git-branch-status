@@ -119,7 +119,11 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
 {
     std::string        symbol;
     unsigned long long attr( 0 );
-    size_t             longestName( 0 );
+    
+    if( screen.width() < 10 )
+    {
+        return;
+    }
     
     ::move( y, 0 );
     
@@ -180,17 +184,26 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
         ::attron( attr );
     }
     
-    ::printw( symbol.c_str() );
-    ::printw( " " );
-    ::printw( branch.name().c_str() );
+    {
+        std::string info( symbol + " " + branch.name() );
+        
+        if( info.length() > screen.width() )
+        {
+            info = info.substr( 0, screen.width() );
+        }
+        
+        ::printw( "%s", info.c_str() );
+    }
     
     if( branch != repos.head() )
     {
         ::attroff( attr );
     }
     
-    if( branch.lastCommit().has_value() )
     {
+        std::vector< std::string > info;
+        size_t                     longestName( 0 );
+        
         for( const auto & b: repos.branches() )
         {
             if( b.name().size() > longestName )
@@ -199,9 +212,18 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
             }
         }
         
-        ::move( y, static_cast< int >( longestName + 3 ) );
+        longestName += 2;
         
-        ::printw( branch.lastCommit()->hash().c_str() );
+        if( branch.lastCommit().has_value() )
+        {
+            info.push_back( branch.lastCommit()->hash() );
+        }
+        
+        if( info.size() > 0 )
+        {
+            ::move( y, static_cast< int >( longestName ) + 1 );
+            ::printw( info[ 0 ].c_str() );
+        }
     }
     
     ::attroff( COLOR_PAIR( 1 ) );
