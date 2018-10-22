@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05253CF5217879E600F6ADE0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05253CF4217879E600F6ADE0 /* main.cpp */; };
+		0577CB3721787B1F00DA03DE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0577CB3621787B1E00DA03DE /* libz.tbd */; };
+		0577CB3921787B2C00DA03DE /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0577CB3821787B2C00DA03DE /* libiconv.tbd */; };
+		05925A09217883DF00E5BB7F /* Repository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05925A07217883DF00E5BB7F /* Repository.cpp */; };
+		05925A0C217883E800E5BB7F /* Branch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05925A0A217883E800E5BB7F /* Branch.cpp */; };
+		05DD605D217AA1AC006A0581 /* Arguments.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05DD605B217AA1AC006A0581 /* Arguments.cpp */; };
+		05DD6060217AA56A006A0581 /* Remote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05DD605E217AA56A006A0581 /* Remote.cpp */; };
+		05DD6066217ABA4F006A0581 /* Credentials.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05DD6064217ABA4F006A0581 /* Credentials.cpp */; };
+		05E218BF21790ADD007A7C9F /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E218BD21790ADD007A7C9F /* Screen.cpp */; };
+		05E218C121790C86007A7C9F /* libncurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E218C021790C86007A7C9F /* libncurses.tbd */; };
+		05E218C421791A42007A7C9F /* Commit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E218C221791A42007A7C9F /* Commit.cpp */; };
+		05F0E3C821787E7200D4E9AC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F0E3C721787E7200D4E9AC /* libc++.tbd */; };
+		05F0E3CA21787E8C00D4E9AC /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F0E3C921787E8C00D4E9AC /* CoreFoundation.framework */; };
+		05F0E3CC21787E9C00D4E9AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F0E3CB21787E9C00D4E9AC /* Security.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		05253CE8217877B400F6ADE0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05253CEA217877B400F6ADE0 /* git-branch-status */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "git-branch-status"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05253CF4217879E600F6ADE0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0577CB3621787B1E00DA03DE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0577CB3821787B2C00DA03DE /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		05925A07217883DF00E5BB7F /* Repository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Repository.cpp; sourceTree = "<group>"; };
+		05925A08217883DF00E5BB7F /* Repository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Repository.hpp; sourceTree = "<group>"; };
+		05925A0A217883E800E5BB7F /* Branch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Branch.cpp; sourceTree = "<group>"; };
+		05925A0B217883E800E5BB7F /* Branch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Branch.hpp; sourceTree = "<group>"; };
+		05DD605B217AA1AC006A0581 /* Arguments.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Arguments.cpp; sourceTree = "<group>"; };
+		05DD605C217AA1AC006A0581 /* Arguments.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Arguments.hpp; sourceTree = "<group>"; };
+		05DD605E217AA56A006A0581 /* Remote.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Remote.cpp; sourceTree = "<group>"; };
+		05DD605F217AA56A006A0581 /* Remote.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Remote.hpp; sourceTree = "<group>"; };
+		05DD6064217ABA4F006A0581 /* Credentials.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Credentials.cpp; sourceTree = "<group>"; };
+		05DD6065217ABA4F006A0581 /* Credentials.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Credentials.hpp; sourceTree = "<group>"; };
+		05E218BD21790ADD007A7C9F /* Screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Screen.cpp; sourceTree = "<group>"; };
+		05E218BE21790ADD007A7C9F /* Screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Screen.hpp; sourceTree = "<group>"; };
+		05E218C021790C86007A7C9F /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
+		05E218C221791A42007A7C9F /* Commit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Commit.cpp; sourceTree = "<group>"; };
+		05E218C321791A42007A7C9F /* Commit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Commit.hpp; sourceTree = "<group>"; };
+		05F0E3C721787E7200D4E9AC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		05F0E3C921787E8C00D4E9AC /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		05F0E3CB21787E9C00D4E9AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05253CE7217877B400F6ADE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F0E3CC21787E9C00D4E9AC /* Security.framework in Frameworks */,
+				05F0E3CA21787E8C00D4E9AC /* CoreFoundation.framework in Frameworks */,
+				05E218C121790C86007A7C9F /* libncurses.tbd in Frameworks */,
+				05F0E3C821787E7200D4E9AC /* libc++.tbd in Frameworks */,
+				0577CB3921787B2C00DA03DE /* libiconv.tbd in Frameworks */,
+				0577CB3721787B1F00DA03DE /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05253CE1217877B400F6ADE0 = {
+			isa = PBXGroup;
+			children = (
+				05253CEC217877B400F6ADE0 /* git-branch-status */,
+				05253CEB217877B400F6ADE0 /* Products */,
+				0577CB3521787B1E00DA03DE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		05253CEB217877B400F6ADE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05253CEA217877B400F6ADE0 /* git-branch-status */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05253CEC217877B400F6ADE0 /* git-branch-status */ = {
+			isa = PBXGroup;
+			children = (
+				05DD6067217ABA53006A0581 /* Utility */,
+				05925A06217883C900E5BB7F /* Git */,
+				05253CF4217879E600F6ADE0 /* main.cpp */,
+				05E218BC21790ACB007A7C9F /* UI */,
+			);
+			path = "git-branch-status";
+			sourceTree = "<group>";
+		};
+		0577CB3521787B1E00DA03DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05E218C021790C86007A7C9F /* libncurses.tbd */,
+				05F0E3CB21787E9C00D4E9AC /* Security.framework */,
+				05F0E3C921787E8C00D4E9AC /* CoreFoundation.framework */,
+				05F0E3C721787E7200D4E9AC /* libc++.tbd */,
+				0577CB3821787B2C00DA03DE /* libiconv.tbd */,
+				0577CB3621787B1E00DA03DE /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05925A06217883C900E5BB7F /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				05925A0A217883E800E5BB7F /* Branch.cpp */,
+				05925A0B217883E800E5BB7F /* Branch.hpp */,
+				05E218C221791A42007A7C9F /* Commit.cpp */,
+				05E218C321791A42007A7C9F /* Commit.hpp */,
+				05DD605E217AA56A006A0581 /* Remote.cpp */,
+				05DD605F217AA56A006A0581 /* Remote.hpp */,
+				05925A07217883DF00E5BB7F /* Repository.cpp */,
+				05925A08217883DF00E5BB7F /* Repository.hpp */,
+			);
+			path = Git;
+			sourceTree = "<group>";
+		};
+		05DD6067217ABA53006A0581 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				05DD605B217AA1AC006A0581 /* Arguments.cpp */,
+				05DD605C217AA1AC006A0581 /* Arguments.hpp */,
+				05DD6064217ABA4F006A0581 /* Credentials.cpp */,
+				05DD6065217ABA4F006A0581 /* Credentials.hpp */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		05E218BC21790ACB007A7C9F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				05E218BD21790ADD007A7C9F /* Screen.cpp */,
+				05E218BE21790ADD007A7C9F /* Screen.hpp */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05253CE9217877B400F6ADE0 /* git-branch-status */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05253CF1217877B400F6ADE0 /* Build configuration list for PBXNativeTarget "git-branch-status" */;
+			buildPhases = (
+				05253CE6217877B400F6ADE0 /* Sources */,
+				05253CE7217877B400F6ADE0 /* Frameworks */,
+				05253CE8217877B400F6ADE0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "git-branch-status";
+			productName = "git-branch-status";
+			productReference = 05253CEA217877B400F6ADE0 /* git-branch-status */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05253CE2217877B400F6ADE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "XS-Labs";
+				TargetAttributes = {
+					05253CE9217877B400F6ADE0 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 05253CE5217877B400F6ADE0 /* Build configuration list for PBXProject "git-branch-status" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 05253CE1217877B400F6ADE0;
+			productRefGroup = 05253CEB217877B400F6ADE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05253CE9217877B400F6ADE0 /* git-branch-status */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05253CE6217877B400F6ADE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05253CF5217879E600F6ADE0 /* main.cpp in Sources */,
+				05925A0C217883E800E5BB7F /* Branch.cpp in Sources */,
+				05925A09217883DF00E5BB7F /* Repository.cpp in Sources */,
+				05DD6060217AA56A006A0581 /* Remote.cpp in Sources */,
+				05E218C421791A42007A7C9F /* Commit.cpp in Sources */,
+				05DD605D217AA1AC006A0581 /* Arguments.cpp in Sources */,
+				05DD6066217ABA4F006A0581 /* Credentials.cpp in Sources */,
+				05E218BF21790ADD007A7C9F /* Screen.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		05253CEF217877B400F6ADE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					Submodules/libgit2/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					lib/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		05253CF0217877B400F6ADE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					Submodules/libgit2/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					lib/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		05253CF2217877B400F6ADE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 326Y53CJMD;
+				OTHER_LDFLAGS = "-lgit2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		05253CF3217877B400F6ADE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 326Y53CJMD;
+				OTHER_LDFLAGS = "-lgit2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05253CE5217877B400F6ADE0 /* Build configuration list for PBXProject "git-branch-status" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05253CEF217877B400F6ADE0 /* Debug */,
+				05253CF0217877B400F6ADE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05253CF1217877B400F6ADE0 /* Build configuration list for PBXNativeTarget "git-branch-status" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05253CF2217877B400F6ADE0 /* Debug */,
+				05253CF3217877B400F6ADE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05253CE2217877B400F6ADE0 /* Project object */;
+}
