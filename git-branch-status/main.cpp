@@ -127,11 +127,16 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
         return;
     }
     
+    if( y >= screen.height() )
+    {
+        return;
+    }
+    
     ::move( y, 0 );
     
     if( screen.supportsColors() )
     {
-        ::init_pair( 1, COLOR_WHITE,   COLOR_GREEN );
+        ::init_pair( 1, COLOR_GREEN,   COLOR_BLACK );
         ::init_pair( 2, COLOR_GREEN,   COLOR_BLACK );
         ::init_pair( 3, COLOR_BLUE,    COLOR_BLACK );
         ::init_pair( 4, COLOR_RED,     COLOR_BLACK );
@@ -139,14 +144,6 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
         ::init_pair( 6, COLOR_YELLOW,  COLOR_BLACK );
         ::init_pair( 7, COLOR_CYAN,    COLOR_BLACK );
         ::init_pair( 8, COLOR_WHITE,   COLOR_BLACK );
-        
-        if( branch == repos.head() )
-        {
-            ::attron( COLOR_PAIR( 1 ) );
-            ::hline( ' ', static_cast< int >( screen.width() ) );
-            ::attroff( COLOR_PAIR( 1 ) );
-            ::move( y, 0 );
-        }
     }
     
     if( branch == repos.head() )
@@ -184,10 +181,7 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
         }
     }
     
-    if( branch != repos.head() )
-    {
-        ::attron( attr );
-    }
+    ::attron( attr );
     
     {
         std::string info( symbol + " " + branch.name() );
@@ -207,10 +201,7 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
         }
     }
     
-    if( branch != repos.head() )
-    {
-        ::attroff( attr );
-    }
+    ::attroff( attr );
     
     {
         std::vector< std::pair< std::string, unsigned long long > > info;
@@ -302,18 +293,9 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
                 }
                 
                 ::move( y, x );
-                
-                if( branch != repos.head() )
-                {
-                    ::attron( p.second );
-                }
-                
+                ::attron( p.second );
                 ::printw( " %s", p.first.c_str() );
-                
-                if( branch != repos.head() )
-                {
-                    ::attroff( p.second );
-                }
+                ::attroff( p.second );
                 
                 x += p.first.length() + 1;
             }

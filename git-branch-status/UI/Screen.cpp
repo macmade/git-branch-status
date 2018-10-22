@@ -202,7 +202,7 @@ namespace UI
                 
                 if( poll( &p, 1, 0 ) > 0 )
                 {
-                    c = getc( stdin );
+                    c = getch();
                     
                     {
                         std::lock_guard< std::mutex > l( this->impl->_mtx );
