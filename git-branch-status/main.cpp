@@ -29,6 +29,8 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <ncurses.h>
 #include "Arguments.hpp"
 #include "Git/Repository.hpp"
@@ -134,6 +136,9 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
         ::init_pair( 3, COLOR_BLUE,    COLOR_BLACK );
         ::init_pair( 4, COLOR_RED,     COLOR_BLACK );
         ::init_pair( 5, COLOR_MAGENTA, COLOR_BLACK );
+        ::init_pair( 6, COLOR_YELLOW,  COLOR_BLACK );
+        ::init_pair( 7, COLOR_CYAN,    COLOR_BLACK );
+        ::init_pair( 8, COLOR_WHITE,   COLOR_BLACK );
         
         if( branch == repos.head() )
         {
@@ -154,7 +159,7 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
     {
         if( repos.head()->isAhead( branch ) && repos.head()->isBehind( branch ) )
         {
-            symbol = "%%";
+            symbol = "%";
             attr   = COLOR_PAIR( 5 );
         }
         else if( repos.head()->isAhead( branch ) )
@@ -192,7 +197,14 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
             info = info.substr( 0, screen.width() );
         }
         
-        ::printw( "%s", info.c_str() );
+        if( branch == repos.head() )
+        {
+            ::printw( "%s", info.c_str() );
+        }
+        else
+        {
+            ::printw( "  %s", info.c_str() );
+        }
     }
     
     if( branch != repos.head() )
@@ -201,28 +213,110 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
     }
     
     {
-        std::vector< std::string > info;
-        size_t                     longestName( 0 );
+        std::vector< std::pair< std::string, unsigned long long > > info;
+        size_t                                                      longestBranch( 0 );
+        size_t                                                      longestAuthor( 0 );
         
         for( const auto & b: repos.branches() )
         {
-            if( b.name().size() > longestName )
+            if( b.name().size() > longestBranch )
             {
-                longestName = b.name().size();
+                longestBranch = b.name().size();
+            }
+            
+            if( b.lastCommit().has_value() )
+            {
+                {
+                    std::string author;
+                    
+                    if( b.lastCommit()->author().has_value() )
+                    {
+                        author = b.lastCommit()->author()->name();
+                    }
+                    else if( b.lastCommit()->committer().has_value() )
+                    {
+                        author = b.lastCommit()->committer()->name();
+                    }
+                    
+                    if( author.size() > longestAuthor )
+                    {
+                        longestAuthor = author.size();
+                    }
+                }
             }
         }
         
-        longestName += 2;
+        longestBranch += 4;
         
         if( branch.lastCommit().has_value() )
         {
-            info.push_back( branch.lastCommit()->hash() );
+            info.push_back( { branch.lastCommit()->hash(), COLOR_PAIR( 6 ) } );
+            
+            if( branch.lastCommit()->time() > 0 )
+            {
+                {
+                    std::tm           tm;
+                    std::stringstream ss;
+                    time_t            t( branch.lastCommit()->time() );
+                    
+                    memset( &tm, 0, sizeof( std::tm ) );
+                    localtime_r( &t, &tm );
+                    
+                    ss << std::put_time( &tm, "%x %X" );
+                    
+                    if( ss.str().length() > 0 )
+                    {
+                        info.push_back( { ss.str(), COLOR_PAIR( 7 ) } );
+                    }
+                }
+            }
+            
+            {
+                std::stringstream ss;
+                
+                ss << std::setw( static_cast< int >( longestAuthor ) );
+                
+                if( branch.lastCommit()->author().has_value() )
+                {
+                    ss << branch.lastCommit()->author()->name();
+                }
+                else if( branch.lastCommit()->committer().has_value() )
+                {
+                    ss << branch.lastCommit()->committer()->name();
+                }
+                
+                info.push_back( { ss.str(), COLOR_PAIR( 8 ) } );
+            }
+            
+            info.push_back( { branch.lastCommit()->message(), COLOR_PAIR( 6 ) } );
         }
         
-        if( info.size() > 0 )
         {
-            ::move( y, static_cast< int >( longestName ) + 1 );
-            ::printw( info[ 0 ].c_str() );
+            int x( static_cast< int >( longestBranch ) );
+            
+            for( const auto & p: info )
+            {
+                if( x + p.first.length() >= screen.width() )
+                {
+                    break;
+                }
+                
+                ::move( y, x );
+                
+                if( branch != repos.head() )
+                {
+                    ::attron( p.second );
+                }
+                
+                ::printw( " %s", p.first.c_str() );
+                
+                if( branch != repos.head() )
+                {
+                    ::attroff( p.second );
+                }
+                
+                x += p.first.length() + 1;
+            }
         }
     }
     
