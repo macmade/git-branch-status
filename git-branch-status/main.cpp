@@ -298,7 +298,16 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
                 info.push_back( { ss.str(), COLOR_PAIR( 8 ) } );
             }
             
-            info.push_back( { branch.lastCommit()->message(), COLOR_PAIR( 6 ) } );
+            {
+                std::string message( branch.lastCommit()->message() );
+                
+                if( message.find( "\n" ) != std::string::npos )
+                {
+                    message = message.substr( 0, message.find( "\n" ) );
+                }
+                
+                info.push_back( { message, COLOR_PAIR( 6 ) } );
+            }
         }
         
         {
