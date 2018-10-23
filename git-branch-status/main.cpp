@@ -92,14 +92,33 @@ int main( int argc, char * argv[] )
                     
                     printBranchInfo( *( head ), repos, screen, y++ );
                     
-                    for( const auto & branch: repos.branches() )
                     {
-                        if( branch == head )
-                        {
-                            continue;
-                        }
+                        std::vector< Git::Branch > branches( repos.branches()  );
                         
-                        printBranchInfo( branch, repos, screen, y++ );
+                        std::sort
+                        (
+                            std::begin( branches ),
+                            std::end( branches ),
+                            [ & ]( const Git::Branch & b1, const Git::Branch & b2 )
+                            {
+                                if( b1.name() == "origin/" + head->name() )
+                                {
+                                    return true;
+                                }
+                                
+                                return b1.name() < b2.name();
+                            }
+                        );
+                        
+                        for( const auto & branch: branches )
+                        {
+                            if( branch == head )
+                            {
+                                continue;
+                            }
+                            
+                            printBranchInfo( branch, repos, screen, y++ );
+                        }
                     }
                 }
                 catch( const std::exception & e )
