@@ -12,7 +12,17 @@ git-branch-status
 
 ### About
 
-Branch status monitoring utility for Git.
+Live branch status monitoring utility for Git.
+
+### Usage:
+
+    git-branch-status [OPTIONS] [PATH]
+
+### Options:
+
+    --help             Shows the help dialog
+    --fetch-origin     Automatically fetches changes from origin
+    --keychain-item    The name of a keychain item containing Git credentials
 
 License
 -------
