@@ -136,6 +136,7 @@ namespace Utility
     }
 
     Arguments::IMPL::IMPL( const IMPL & o ):
+        _help( false ),
         _fetchOrigin( o._fetchOrigin ),
         _path( o._path ),
         _keychainItem( o._keychainItem )
