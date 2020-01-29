@@ -107,6 +107,7 @@ namespace Utility
     }
 
     Arguments::IMPL::IMPL( int argc, char * argv[] ):
+        _help( false ),
         _fetchOrigin( false )
     {
         for( int i = 1; i < argc; i++ )
@@ -136,7 +137,7 @@ namespace Utility
     }
 
     Arguments::IMPL::IMPL( const IMPL & o ):
-        _help( false ),
+        _help( o._help ),
         _fetchOrigin( o._fetchOrigin ),
         _path( o._path ),
         _keychainItem( o._keychainItem )
