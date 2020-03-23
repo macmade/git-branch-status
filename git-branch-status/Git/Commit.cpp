@@ -84,7 +84,17 @@ namespace Git
     
     std::string Commit::hash( void ) const
     {
+        return this->hash( 0 );
+    }
+    
+    std::string Commit::hash( size_t length ) const
+    {
         char s[ GIT_OID_HEXSZ + 1 ];
+        
+        if( length == 0 || length > GIT_OID_HEXSZ )
+        {
+            length = GIT_OID_HEXSZ;
+        }
         
         memset( s, 0, sizeof( s ) );
         
@@ -93,7 +103,7 @@ namespace Git
             return {};
         }
         
-        return s;
+        return std::string( s ).substr( 0, length );
     }
 
     std::string Commit::body( void ) const

@@ -260,7 +260,7 @@ void printBranchInfo( const Git::Branch & branch, const Git::Repository & repos,
         
         if( branch.lastCommit().hasValue() )
         {
-            info.push_back( { branch.lastCommit()->hash(), COLOR_PAIR( 6 ) } );
+            info.push_back( { branch.lastCommit()->hash( 8 ), COLOR_PAIR( 6 ) } );
             
             if( branch.lastCommit()->time() > 0 )
             {

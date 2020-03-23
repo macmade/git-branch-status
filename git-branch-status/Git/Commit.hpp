@@ -57,13 +57,14 @@ namespace Git
             bool operator ==( const Commit & o ) const;
             bool operator !=( const Commit & o ) const;
             
-            std::string                    hash( void )      const;
-            std::string                    body( void )      const;
-            std::string                    message( void )   const;
-            std::string                    summary( void )   const;
-            time_t                         time( void )      const;
-            Utility::Optional< Signature > author( void )    const;
-            Utility::Optional< Signature > committer( void ) const;
+            std::string                    hash( void )          const;
+            std::string                    hash( size_t length ) const;
+            std::string                    body( void )          const;
+            std::string                    message( void )       const;
+            std::string                    summary( void )       const;
+            time_t                         time( void )          const;
+            Utility::Optional< Signature > author( void )        const;
+            Utility::Optional< Signature > committer( void )     const;
             
             friend void swap( Commit & o1, Commit & o2 );
             
