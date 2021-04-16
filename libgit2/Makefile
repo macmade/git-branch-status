@@ -1,7 +1,7 @@
 ################################################################################
 # The MIT License (MIT)
 # 
-# Copyright (c) 2018 Jean-David Gadina - www-xs-labs.com
+# Copyright (c) 2021 Jean-David Gadina - www-xs-labs.com
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -23,19 +23,31 @@
 ################################################################################
 
 # @file        Makefile
-# @copyright   (c) 2018, Jean-David Gadina - www.xs-labs.com
+# @copyright   (c) 2021, Jean-David Gadina - www.xs-labs.com
 
-DIR_TMP := ./tmp/
-DIR_SRC := ../../Submodules/libgit2/
+DIR_SRC             := $(realpath .)/source
+DIR_BUILD           := $(realpath .)/build
 
-MAC_TARGET   := 10.13
-FLAGS_C      := -arch x86_64 -mmacosx-version-min=$(MAC_TARGET)
-FLAGS_STDLIB := -stdlib=libc++
+.PHONY: clone update build
 
-all:
-	@cd $(DIR_TMP) && cmake -DMACOSX_DEPLOYMENT_TARGET=$(MAC_TARGET) -DBUILD_SHARED_LIBS=OFF -DCMAKE_BUILD_TYPE=Release -DTHREADSAFE=ON -DBUILD_CLAR=OFF -DCMAKE_C_FLAGS="$(FLAGS_C) $(FLAGS_STDLIB)" -DCMAKE_CXX_FLAGS="$(FLAGS_C) $(FLAGS_STDLIB)" $(DIR_SRC)
-	@cd $(DIR_TMP) && make CFLAGS="$(FLAGS_C)" CXXFLAGS="$(FLAGS_C) $(FLAGS_STDLIB)" CPPFLAGS="$(FLAGS_C) $(FLAGS_STDLIB)" LDFLAGS="$(FLAGS_STDLIB)"
-	@cp $(DIR_TMP)libgit2.a .
+all: clone update build
+	
+	@:
 
-clean:
-	@rm -rf $(DIR_TMP)*
+clone:
+	
+	@if [ ! -d $(DIR_SRC) ]; then git clone --recursive https://github.com/libgit2/libgit2.git $(DIR_SRC); fi
+
+update:
+	
+	@cd $(DIR_SRC) && git pull
+
+build: build_x86_64 build_arm64
+	
+	@lipo -create -output $(DIR_BUILD)/libgit2.a $(DIR_BUILD)/arm64/libgit2.a $(DIR_BUILD)/x86_64/libgit2.a
+	
+build_%:
+	
+	@mkdir -p $(DIR_BUILD)/$*
+	@cd $(DIR_BUILD)/$* && cmake -DCMAKE_OSX_ARCHITECTURES=$* -DMACOSX_DEPLOYMENT_TARGET=10.13 -DBUILD_SHARED_LIBS=OFF -DCMAKE_BUILD_TYPE=Release -DTHREADSAFE=ON -DBUILD_CLAR=OFF -DCMAKE_C_FLAGS="-arch $* -mmacosx-version-min=10.13 -stdlib=libc++" -DCMAKE_CXX_FLAGS="-arch $* -mmacosx-version-min=10.13 -stdlib=libc++" $(DIR_SRC)
+	@cd $(DIR_BUILD)/$* && make CFLAGS="-arch $* -mmacosx-version-min=10.13" CXXFLAGS="-arch $* -mmacosx-version-min=10.13 -stdlib=libc++" CPPFLAGS="-arch $* -mmacosx-version-min=10.13 -stdlib=libc++" LDFLAGS="-stdlib=libc++"
