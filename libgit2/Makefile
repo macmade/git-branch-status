@@ -45,6 +45,8 @@ update:
 build: build_x86_64 build_arm64
 	
 	@lipo -create -output $(DIR_BUILD)/libgit2.a $(DIR_BUILD)/arm64/libgit2.a $(DIR_BUILD)/x86_64/libgit2.a
+	@rm -rf include
+	@cp -r $(DIR_SRC)/include include
 	
 build_%:
 	
