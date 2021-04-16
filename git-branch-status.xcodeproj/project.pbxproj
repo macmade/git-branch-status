@@ -187,7 +187,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "XS-Labs";
 				TargetAttributes = {
 					05253CE9217877B400F6ADE0 = {
@@ -201,6 +201,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 05253CE1217877B400F6ADE0;
 			productRefGroup = 05253CEB217877B400F6ADE0 /* Products */;
@@ -284,7 +285,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					Submodules/libgit2/include,
+					libgit2/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -346,7 +347,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					Submodules/libgit2/include,
+					libgit2/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
